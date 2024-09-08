@@ -6,6 +6,184 @@
     <title>Dashboard</title>
 </head>
 <body>
-    
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg home-nav">
+        <a class="" href="home.php">
+            <img src="../img/PayMate.png" class="paymate-size" alt="PayMate logo">
+        </a>
+        <a class="ml-auto" href="profile.php">
+            <img src="../img/user.png" class="profile-size" alt="profile icon">
+        </a> 
+        <a href="settings.php">
+            <i class="fa fa-cog fa-2x"></i>
+        </a>
+    </nav> 
+
+    <div class="container-fluid">
+        <!-- SIDEBAR -->
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar home-nav">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.php">
+                            <button onClick="focusMe(this)" class="btn btn-block text-left" style="margin-bottom: 15px;">
+                                <i class="fa fa-home default-color" style="margin-right: 10px;"></i><span class="default-color">Home</span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a onClick="focusMe(this)" class="nav-link active" href="employees.php">
+                            <button class="btn btn-block text-left" style="margin-bottom: 15px;">
+                            <i class="fa fa-user default-color" style="margin-right: 10px;"></i><span class="default-color">Employees</span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="payroll.php">
+                            <button onClick="focusMe(this)" class="btn btn-block text-left" style="margin-bottom: 15px;">
+                            <i class="fa-regular fa-money-bill-1 default-color" style="margin-right: 10px;"></i><span class="default-color">Payroll</span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="salary.php">
+                            <button onClick="focusMe(this)" class="btn btn-block text-left" style="margin-bottom: 15px;">
+                            <i class="fa-solid fa-hand-holding-dollar default-color" style="margin-right: 10px;"></i><span class="default-color">Set Salary</span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="departments.php">
+                            <button onClick="focusMe(this)" class="btn btn-block text-left" style="margin-bottom: 15px;">
+                            <i class="fa fa-users default-color" style="margin-right: 10px;"></i><span class="default-color">Departments</span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="position: absolute; bottom: 0; width: 100%;">
+                        <a class="nav-link active" href="index.php">
+                            <button onClick="focusMe(this)" class="btn btn-block text-left" style="margin-bottom: 15px;">
+                            <i class="fa-solid fa-arrow-right-from-bracket default-color" style="margin-right: 10px;"></i><span class="default-color">Log Out</span>
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        <!-- MAIN -->
+        <div role="main" class="col-md-5 ml-sm-auto col-lg-10 px-md-5">
+            <!-- Home -->
+            <h4 style="font-size: 30px; margin-top: 90px;"><b>Home</b></h4>
+            <!-- Employee Summary -->
+            <div class="row" style="margin-left: 1px; margin-right: -10px;">
+                <h5 style="font-size: 19px; margin-top: 9px; margin-bottom: 15px;"><b>Employee Summary</b></h5>
+                <form action="home.php" method="get" class="search-bar ml-auto" style="margin-right: 2px;">
+                    <input type="text" placeholder="Search employee name or ID..." class="search-input">
+                    <button type="submit" class="search"><i class="fa fa-search"></i></button>
+                </form>
+                <div class="col-auto"><button type="submit" onClick="toAddNew()" class="btn btn-primary green-button" style="width: 170px;"><i class="fa fa-plus" style="margin-right: 10px;"></i>New Employee</button></div>
+            </div>
+
+            <!-- Employee Summary -->
+            <div class="row" style="margin-left: -15px; margin-right: 1px; margin-bottom: 20px;">
+                <div class="col-md mx-auto">
+                    <div class="card card-style" id="card-sm" onClick="toEmployees()" style="width: 24%;">
+                        <div class="card-body card-padding">
+                            <p class="table-th1" style="margin:0; padding: 0;">Total No. of Employees</p>                          
+                            <p class="table-td1 margin:0; padding: 0;">209</p>
+                        </div>
+                        <i class="fa fa-user-group fa-2x card-icon"></i>
+                    </div>
+
+                    <div class="card card-style" id="card-sm" onClick="toEmployees()" style="width: 23%; margin-left: 2%;">
+                        <div class="card-body card-padding">
+                            <p class="table-th1" style="margin:0; padding: 0;">Regular</p>
+                            <p class="table-td1 margin:0; padding: 0;">184</p>
+                        </div>
+                        <i class="fa fa-user-tie fa-2x card-icon"></i>
+                    </div>
+
+                    <div class="card card-style" id="card-sm" onClick="toEmployees()" style="width: 23%; margin-left: 2%;">
+                        <div class="card-body card-padding">
+                            <p class="table-th1" style="margin:0; padding: 0;">Trainee</p>
+                            <p class="table-td1 margin:0; padding: 0;">25</p>
+                        </div>
+                        <i class="fa fa-user fa-2x card-icon"></i>
+                    </div>
+
+                    <div class="card card-style" id="card-sm" onClick="toDepartments()" style="width: 24%; margin-left: 2%;">
+                        <div class="card-body card-padding">
+                            <p class="table-th1" style="margin:0; padding: 0;">Departments</p>
+                            <p class="table-td1 margin:0; padding: 0;">5</p>
+                        </div>
+                        <i class="fa fa-users fa-2x card-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions -->
+            <h5 style="font-size: 19px; margin-top: 20px; margin-bottom: 20px;"><b>Transactions</b></h5>
+            <div class="row">
+                    <div class="col-md mx-auto">
+                        <div class="card w-100 card-style mb-5">
+                            <div class="card-body card-padding" style="padding-bottom: 20px;">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                            <tr>
+                                                <th class="table-th2">Transaction No.</th>
+                                                <th class="table-th2">Department</th>
+                                                <th class="table-th2">Employees</th>
+                                                <th class="table-th2">Pay Period</th>
+                                                <th class="table-th2">Payment Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="table-td2" onClick="toAgents()">2024-01-16-001</td>
+                                                <td class="table-td2" onClick="toAgents()">Agent</td>
+                                                <td class="table-td2" onClick="toAgents()">104</td>
+                                                <td class="table-td2" onClick="toAgents()">January 1-15, 2024</td>
+                                                <td style="text-align: center;"><button class="status-initial" id="status" onclick="changeStatus(this)">Pending</button></td>
+                                            </tr>
+                                                <td class="table-td2">2024-01-16-001</td>
+                                                <td class="table-td2">Human Resources</td>
+                                                <td class="table-td2">20</td>
+                                                <td class="table-td2">January 1-15, 2024</td>
+                                                <td style="text-align: center;"><button class="status-initial" id="status" onclick="changeStatus(this)">Pending</button></td>
+                                            </tr>
+                                                <td class="table-td2">2024-01-16-001</td>
+                                                <td class="table-td2">IT</td>
+                                                <td class="table-td2">11</td>
+                                                <td class="table-td2">January 1-15, 2024</td>
+                                                <td style="text-align: center;"><button class="status-initial" id="status" onclick="changeStatus(this)">Pending</button></td>
+                                            </tr>
+                                                <td class="table-td2">2024-01-16-001</td>
+                                                <td class="table-td2">Management</td>
+                                                <td class="table-td2">16</td>
+                                                <td class="table-td2">January 1-15, 2024</td>
+                                                <td style="text-align: center;"><button class="status-initial" id="status" onclick="changeStatus(this)">Pending</button></td>
+                                            </tr>
+                                                <td class="table-td2">2024-01-16-001</td>
+                                                <td class="table-td2">Quality Assurance</td>
+                                                <td class="table-td2">58</td>
+                                                <td class="table-td2">January 1-15, 2024</td>
+                                                <td style="text-align: center;"><button class="status-initial" id="status" onclick="changeStatus(this)">Pending</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+</div>
+
 </body>
 </html>
